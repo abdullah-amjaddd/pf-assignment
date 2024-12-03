@@ -1,0 +1,31 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    string predefinedPassword = "1234"; // Predefined password
+    string enteredPassword;
+    bool accessGranted = false;
+
+    // Allow the user up to three attempts
+    for (int attempt = 1; attempt <= 3; ++attempt) {
+        cout << "Enter your password (Attempt " << attempt << " of 3): ";
+        cin >> enteredPassword;
+
+        // Check if the entered password matches the predefined one
+        if (enteredPassword == predefinedPassword) {
+            cout << "Access Granted!\n";
+            accessGranted = true;
+            break; // Exit the loop if the password is correct
+        } else {
+            cout << "Incorrect password. Try again.\n";
+        }
+    }
+
+    // If all attempts are used and access is not granted
+    if (!accessGranted) {
+        cout << "Access Denied. All attempts used.\n";
+    }
+
+    return 0;
+}
