@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+
+    // Prompt user for a positive integer
+    cout << "Enter a positive integer: ";
+    cin >> n;
+
+    // Validate input
+    if (n <= 0) {
+        cout << "Please enter a positive integer." << endl;
+        return 1;
+    }
+
+    // Generate the reverse number pattern
+    for (int i = n; i >= 1; --i) {
+        for (int j = i; j >= 1; --j) {
+            cout << j << " ";
+        }
+        cout << endl;
+    }
+
+    return 0;
+}
