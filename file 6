@@ -1,0 +1,34 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    char choice;
+    do {
+        int marks;
+        cout << "Enter the student's marks (0-100): ";
+        cin >> marks;
+
+        // Validate input
+        if (marks < 0 || marks > 100) {
+            cout << "Invalid input. Marks must be between 0 and 100." << endl;
+            continue;
+        }
+
+        // Determine grade
+        char grade;
+        if (marks >= 90) grade = 'A';
+        else if (marks >= 80) grade = 'B';
+        else if (marks >= 70) grade = 'C';
+        else if (marks >= 60) grade = 'D';
+        else grade = 'F';
+
+        cout << "Grade: " << grade << endl;
+
+        // Ask if user wants to continue
+        cout << "Do you want to calculate grades for another student? (y/n): ";
+        cin >> choice;
+    } while (choice == 'y' || choice == 'Y');
+
+    cout << "Exiting program." << endl;
+    return 0;
+}
