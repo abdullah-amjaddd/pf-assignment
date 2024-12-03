@@ -1,0 +1,31 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int number;
+    int oddCount = 0, evenCount = 0;
+
+    cout << "Enter numbers to count odd and even numbers (enter 0 to stop):\n";
+
+    while (true) { // Infinite loop to continuously prompt the user
+        cout << "Enter a number: ";
+        cin >> number;
+
+        if (number == 0) {
+            // Break the loop when 0 is entered
+            break;
+        }
+
+        if (number % 2 == 0) {
+            evenCount++; // Increment even counter
+        } else {
+            oddCount++; // Increment odd counter
+        }
+    }
+
+    // Display the results
+    cout << "\nTotal even numbers: " << evenCount << endl;
+    cout << "Total odd numbers: " << oddCount << endl;
+
+    return 0;
+}
